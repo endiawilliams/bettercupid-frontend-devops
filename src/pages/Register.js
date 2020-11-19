@@ -36,6 +36,10 @@ const Register = props => {
           props.history.push('/login')
         })
     }
+
+    if ((Date.now() - birthday) < (18 * 31556952000)) {
+      throw new Error("Sorry, you must be 18 to use this site")
+    }
   }
 
   return (

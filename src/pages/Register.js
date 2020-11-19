@@ -6,6 +6,7 @@ const Register = props => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [birthday, setBirthday] = useState('');
+  
   const handleName = e => {
     setName(e.target.value)
   }  
@@ -18,9 +19,11 @@ const Register = props => {
   const handleConfirmPassword = e => {
     setConfirmPassword(e.target.value)
   }
+
   const handleBirthday = e => {
     setBirthday(e.target.value)
   }
+
   const handleSubmit = e => {
     e.preventDefault()
 
@@ -39,6 +42,7 @@ const Register = props => {
           props.history.push('/login')
         })
     }
+  }
 
     
   }

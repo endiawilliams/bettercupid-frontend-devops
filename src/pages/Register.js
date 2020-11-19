@@ -6,6 +6,7 @@ const Register = props => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [birthday, setBirthday] = useState('');
 
   const handleName = e => {
     setName(e.target.value)
@@ -20,6 +21,10 @@ const Register = props => {
     setConfirmPassword(e.target.value)
   }
 
+  const handleBirthday = e => {
+    setBirthday(e.target.value)
+  }
+
   const handleSubmit = e => {
     e.preventDefault()
 
@@ -30,6 +35,10 @@ const Register = props => {
           // redirect to /login
           props.history.push('/login')
         })
+    }
+
+    if ((Date.now() - birthday) < (18 * 31556952000)) {
+      throw new Error("Sorry, you must be 18 to use this site")
     }
   }
 
@@ -49,7 +58,7 @@ const Register = props => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="name">Email</label>
+          <label htmlFor="email">Email</label>
           <input 
             onChange={ handleEmail } 
             value={ email } 
@@ -60,7 +69,7 @@ const Register = props => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="name">Password</label>
+          <label htmlFor="password">Password</label>
           <input 
             onChange={ handlePassword } 
             value={ password } 
@@ -78,6 +87,17 @@ const Register = props => {
             type="password" 
             id="confirm-password" 
             name="confirm-password" 
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="birthday">Birthday</label>
+          <input
+            onChange={ handleBirthday }
+            value={ birthday }
+            type="date"
+            id="birthday"
+            name="birthday"
             required
           />
         </div>

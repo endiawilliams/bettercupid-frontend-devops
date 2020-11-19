@@ -25,6 +25,10 @@ const Register = props => {
     setBirthday(e.target.value)    
   }
 
+  const handleBirthday = e => {
+    setBirthday(e.target.value)
+  }
+
   const handleSubmit = e => {
     e.preventDefault()
     if ((Date.now() - birthday) < (18 * 31556952000)) {
@@ -57,23 +61,23 @@ const Register = props => {
         </div>
         <div className="form-group">
           <label htmlFor="email">Email</label>
-          <input
-            onChange={handleEmail}
-            value={email}
-            type="email"
-            id="email"
-            name="email"
+          <input 
+            onChange={ handleEmail } 
+            value={ email } 
+            type="email" 
+            id="email" 
+            name="email" 
             required
           />
         </div>
         <div className="form-group">
           <label htmlFor="password">Password</label>
-          <input
-            onChange={handlePassword}
-            value={password}
-            type="password"
-            id="password"
-            name="password"
+          <input 
+            onChange={ handlePassword } 
+            value={ password } 
+            type="password" 
+            id="password" 
+            name="password" 
             required
           />
         </div>
@@ -93,6 +97,17 @@ const Register = props => {
           <input
             onChange={handleBirthday}
             value={birthday}
+            type="date"
+            id="birthday"
+            name="birthday"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="birthday">Birthday</label>
+          <input
+            onChange={ handleBirthday }
+            value={ birthday }
             type="date"
             id="birthday"
             name="birthday"

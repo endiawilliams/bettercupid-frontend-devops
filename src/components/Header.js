@@ -8,6 +8,9 @@ const Header = (props) => {
       <div className="logo">
         <Link to={'/'}>BetterCupid</Link>
       </div>
+      <div>
+        <Link to={'/about'}>About</Link>
+      </div>
       <div className="links">
         <ul>
           { props.currentUser ? 

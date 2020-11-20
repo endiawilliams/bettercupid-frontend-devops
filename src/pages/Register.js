@@ -10,7 +10,7 @@ const Register = props => {
 
   const handleName = e => {
     setName(e.target.value)
-  }  
+  }
 
   const handleEmail = e => {
     setEmail(e.target.value)
@@ -36,7 +36,7 @@ const Register = props => {
     }
 
     if (password === confirmPassword) {
-      UserModel.create({ name, email, password })
+      UserModel.create({ name, email, password, birthday })
         .then(data => {
           console.log('Successful register', data)
           // redirect to /login
@@ -51,7 +51,7 @@ const Register = props => {
       <form onSubmit={ handleSubmit }>
         <div className="form-group">
           <label htmlFor="name" className="col-form-label">Name</label>
-          <div class="col-sm-10">
+          <div className="col-sm-10">
             <input 
               onChange={ handleName } 
               value={ name }
@@ -64,7 +64,7 @@ const Register = props => {
         </div>
         <div className="form-group">
           <label htmlFor="email" className="col-form-label">Email</label>
-          <div class="col-sm-10">
+          <div className="col-sm-10">
             <input 
               onChange={ handleEmail } 
               value={ email } 
@@ -77,7 +77,7 @@ const Register = props => {
         </div>
         <div className="form-group">
           <label htmlFor="password" className="col-form-label">Password</label>
-          <div class="col-sm-10">
+          <div className="col-sm-10">
             <input 
               onChange={ handlePassword } 
               value={ password } 
@@ -90,7 +90,7 @@ const Register = props => {
         </div>
         <div className="form-group">
           <label htmlFor="confirm-password" className="col-form-label">Confirm Password</label>
-          <div class="col-sm-10">
+          <div className="col-sm-10">
             <input 
               onChange={ handleConfirmPassword } 
               value={ confirmPassword } 
@@ -103,7 +103,7 @@ const Register = props => {
         </div>
         <div className="form-group">
           <label htmlFor="birthday" className="col-form-label">Birthday</label>
-          <div class="col-sm-10">
+          <div className="col-sm-10">
             <input
               onChange={ handleBirthday }
               value={ birthday }

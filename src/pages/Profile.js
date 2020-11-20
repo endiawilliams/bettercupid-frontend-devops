@@ -1,9 +1,10 @@
 import React from 'react';
+import UserInfo from '../components/UserInfo';
 
 const Profile = props => {
   return (
-    <h1>Profile of user with ID { props.currentUser }</h1>
+    <UserInfo />
   )
 }
 
-export default Profile
+export default Profile;

@@ -9936,4 +9936,28 @@ label {
   padding-top: 15px;
 }
 
+header {
+  background-color: slategrey;
+  text-align: left;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+header a {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+header a:hover {
+  color: #cccccc;
+}
+header ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+header ul li {
+  list-style-type: none;
+  padding: 0px 10px;
+}
+
 /*# sourceMappingURL=index.css.map */

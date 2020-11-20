@@ -36,7 +36,7 @@ const Register = props => {
     }
 
     if (password === confirmPassword) {
-      UserModel.create({ name, email, password })
+      UserModel.create({ name, email, password, birthday })
         .then(data => {
           console.log('Successful register', data)
           // redirect to /login

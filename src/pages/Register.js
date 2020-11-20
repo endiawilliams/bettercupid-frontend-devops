@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import UserModel from '../models/user'
+
 const Register = props => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');

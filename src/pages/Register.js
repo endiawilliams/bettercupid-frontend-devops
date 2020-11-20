@@ -11,12 +11,15 @@ const Register = props => {
   const handleName = e => {
     setName(e.target.value)
   }  
+
   const handleEmail = e => {
     setEmail(e.target.value)
   }
+
   const handlePassword = e => {
     setPassword(e.target.value)
   }
+
   const handleConfirmPassword = e => {
     setConfirmPassword(e.target.value)
   }
@@ -29,10 +32,7 @@ const Register = props => {
     e.preventDefault()
 
     if ((Date.now() - birthday) < (18 * 31556952000)) {
-      // throw new Error("Sorry, you must be 18 to use this site")
-      console.log("sorry you must be 18 to use this site")
-      
-      return false
+      console.log("Sorry, you must be 18 to use this site")
     }
 
     if (password === confirmPassword) {
@@ -43,72 +43,80 @@ const Register = props => {
           props.history.push('/login')
         })
     }
-
-    
   }
 
     
   
   return (
-    <div>
-      <h4>Register</h4>
+    <div className="register-form card">
+      <h4 className="register-header">Register</h4>
       <form onSubmit={ handleSubmit }>
         <div className="form-group">
-          <label htmlFor="name">Name</label>
-          <input 
-            onChange={ handleName } 
-            value={ name }
-            type="text" 
-            id="name" 
-            name="name" 
-            required
-          />
+          <label htmlFor="name" className="col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input 
+              onChange={ handleName } 
+              value={ name }
+              type="text" 
+              id="name" 
+              name="name" 
+              required
+            />
+          </div>
         </div>
         <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input 
-            onChange={ handleEmail } 
-            value={ email } 
-            type="email" 
-            id="email" 
-            name="email" 
-            required
-          />
+          <label htmlFor="email" className="col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input 
+              onChange={ handleEmail } 
+              value={ email } 
+              type="email" 
+              id="email" 
+              name="email" 
+              required
+            />
+          </div>
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input 
-            onChange={ handlePassword } 
-            value={ password } 
-            type="password" 
-            id="password" 
-            name="password" 
-            required
-          />
+          <label htmlFor="password" className="col-form-label">Password</label>
+          <div class="col-sm-10">
+            <input 
+              onChange={ handlePassword } 
+              value={ password } 
+              type="password" 
+              id="password" 
+              name="password" 
+              required
+            />
+          </div>  
         </div>
         <div className="form-group">
-          <label htmlFor="confirm-password">Confirm Password</label>
-          <input 
-            onChange={ handleConfirmPassword } 
-            value={ confirmPassword } 
-            type="password" 
-            id="confirm-password" 
-            name="confirm-password" 
-            required
-          />
+          <label htmlFor="confirm-password" className="col-form-label">Confirm Password</label>
+          <div class="col-sm-10">
+            <input 
+              onChange={ handleConfirmPassword } 
+              value={ confirmPassword } 
+              type="password" 
+              id="confirm-password" 
+              name="confirm-password" 
+              required
+            />
+          </div>
         </div>
         <div className="form-group">
-          <label htmlFor="birthday">Birthday</label>
-          <input
-            onChange={ handleBirthday }
-            value={ birthday }
-            type="date"
-            id="birthday"
-            name="birthday"
-            required
-          />
+          <label htmlFor="birthday" className="col-form-label">Birthday</label>
+          <div class="col-sm-10">
+            <input
+              onChange={ handleBirthday }
+              value={ birthday }
+              type="date"
+              id="birthday"
+              name="birthday"
+              required
+            />
+          </div>
         </div>
-        <button type="submit">Register</button>
+        <button type="submit" className="register-button">Register</button>
       </form>
     </div>
   )

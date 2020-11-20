@@ -9906,6 +9906,10 @@ body {
   font-size: 2em;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .form-group > label {
   text-align: left;
   padding-left: 15px;

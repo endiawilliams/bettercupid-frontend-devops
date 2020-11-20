@@ -5,6 +5,7 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -9896,9 +9897,39 @@ h3 {
     border-color: #dee2e6;
   }
 }
-.test-button {
-  background-color: #e83e8c;
-  color: #ffc107;
+body {
+  position: relative;
+}
+
+.logo {
+  font-family: "Courgette", cursive;
+  font-size: 2em;
+}
+
+.form-group > label {
+  text-align: left;
+  padding-left: 15px;
+}
+
+label, input {
+  display: block;
+}
+
+label {
+  font-weight: bold;
+}
+
+.register-form, .login-form {
+  display: inline-flex;
+  align-items: center;
+}
+
+.register-button, .login-button {
+  margin-bottom: 15px;
+}
+
+.register-header, .login-header {
+  padding-top: 15px;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -12,15 +12,12 @@ const Register = props => {
   const handleName = e => {
     setName(e.target.value)
   }  
-
   const handleEmail = e => {
     setEmail(e.target.value)
   }
-
   const handlePassword = e => {
     setPassword(e.target.value)
   }
-
   const handleConfirmPassword = e => {
     setConfirmPassword(e.target.value)
   }
@@ -33,12 +30,8 @@ const Register = props => {
       console.log("Sorry, you must be 18 to use this site")
     }
 
-    if ((Date.now() - birthday) < (18 * 31556952000)) {
-      console.log("Sorry, you must be 18 to use this site")
-    }
-
     if (password === confirmPassword) {
-      UserModel.create({ name, email, password })
+      UserModel.create({ name, email, password, birthday })
         .then(data => {
           console.log('Successful register', data)
           // redirect to /login

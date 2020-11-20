@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import ProfileModel from '../models/profile'
 
-const Profile = props => {
+const ProfileList = (props) => {
+  // const [profiles, setProfiles] = useState([]);
+
+  // const fetchProfiles = () => {
+  //   ProfileModel.all().then(data => {
+  //     console.log(data);
+  //     setProfiles(data.profiles)
+  //   })
+  // }
+  // console.log(profiles)
+
+  // useEffect(() => {
+  //   fetchProfiles()
+  // }, []);
+
   return (
-    <h1>Profile of user with ID { props.currentUser }</h1>
+    <p>Hello world</p>
   )
 }
 
-export default Profile
+export default ProfileList;

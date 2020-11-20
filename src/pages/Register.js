@@ -22,13 +22,8 @@ const Register = props => {
     setConfirmPassword(e.target.value)
   }
   const handleBirthday = e => {
-    setBirthday(e.target.value)    
-  }
-
-  const handleBirthday = e => {
     setBirthday(e.target.value)
   }
-
   const handleSubmit = e => {
     e.preventDefault()
     if ((Date.now() - birthday) < (18 * 31556952000)) {

@@ -10,13 +10,23 @@ export default class ProfileModel {
       body: JSON.stringify(data)
     }).then(res => res.json())
   }
-  static getProfile(data) {
+  static getOwnProfile(data) {
     return fetch(`${REACT_APP_API_URL}/profile`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(data)
+      credentials: "include"
+    }).then(res => res.json())
+  }
+
+  static viewProfile(data) {
+    return fetch(`${REACT_APP_API_URL}/profile`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: "include"
     }).then(res => res.json())
   }
 
@@ -36,6 +46,7 @@ export default class ProfileModel {
       headers: {
         "Content-Type": "application/json"
       },
+      credentials: "include",
       body: JSON.stringify(data)
     }).then(res => res.json())
   }
@@ -45,7 +56,12 @@ export default class ProfileModel {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(data)
+      credentials: "include"
     }).then(res => res.json())
   }
+
+  
+
 }
+
+

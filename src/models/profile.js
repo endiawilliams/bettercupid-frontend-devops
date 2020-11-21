@@ -2,7 +2,7 @@ const REACT_APP_API_URL = "http://localhost:4000/api/v1"
 
 export default class ProfileModel {
   static getProfiles(data) {
-    return fetch(`${REACT_APP_API_URL}/profile/getAllProfiles`, {
+    return fetch(`${REACT_APP_API_URL}/profile`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -11,7 +11,7 @@ export default class ProfileModel {
     }).then(res => res.json())
   }
   static getProfile(data) {
-    return fetch(`${REACT_APP_API_URL}/profile/getProfile`, {
+    return fetch(`${REACT_APP_API_URL}/profile`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -21,7 +21,7 @@ export default class ProfileModel {
   }
 
   static createProfile(data) {
-    return fetch(`${REACT_APP_API_URL}/profile/createProfile`, {
+    return fetch(`${REACT_APP_API_URL}/profile`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -31,7 +31,7 @@ export default class ProfileModel {
   }
 
   static updateProfile(data) {
-    return fetch(`${REACT_APP_API_URL}/profile/updateProfile`, {
+    return fetch(`${REACT_APP_API_URL}/profile`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -40,7 +40,7 @@ export default class ProfileModel {
     }).then(res => res.json())
   }
   static removeProfile(data) {
-    return fetch(`${REACT_APP_API_URL}/profile/removeProfile`, {
+    return fetch(`${REACT_APP_API_URL}/profile`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"

@@ -4,13 +4,20 @@ const UserInfo = () => {
     return (
         <div className="card flex-row flex-wrap user-info">
             <div className="card-header border-0">
-                <img src='https://www.flaticon.com/premium-icon/icons/svg/2102/2102633.svg' height='100px' width='100px' alt='user icon' />
+                <img src='https://www.flaticon.com/premium-icon/icons/svg/2102/2102633.svg' height='180px' width='180px' alt='user icon' />
             </div>
-            <div className="card-block px-2">
+            <div className="card-block info-card-text">
                 <h4 className="card-title">Display Name</h4>
-                <p className="card-text">Age, Location</p>
-                <a href="#" className="btn btn-primary">Like</a>
-                <a href="#" className="btn btn-primary">Message</a>
+                <div className="card-text">
+                    <p>Age</p>
+                    <p>Location</p>
+                </div>
+                <a href="#" className="info-card-button">
+                    <img src='https://www.flaticon.com/svg/static/icons/svg/1077/1077035.svg' height='20px' width='20px' alt='heart' />
+                </a>
+                <a href="#" className="info-card-button">
+                    <img src='https://www.flaticon.com/svg/static/icons/svg/1077/1077071.svg' height='20px' width='20px' alt='message' />
+                </a>
             </div>
         </div>
     )

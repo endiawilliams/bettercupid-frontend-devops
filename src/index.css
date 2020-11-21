@@ -9940,8 +9940,21 @@ label {
   width: 500px;
 }
 
+.info-card-text {
+  margin: 0 auto;
+  height: 100%;
+  padding-top: 18px;
+}
+
+.info-card-button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .about-me {
   width: 100%;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 .profile-container {

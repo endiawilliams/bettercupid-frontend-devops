@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import ProfileModel from '../models/profile'
+import BrowseResults from '../components/BrowseResults';
+import ProfileModel from '../models/profile';
 
 const ProfilesList = (props) => {
   const [profiles, setProfiles] = useState([]);
@@ -17,10 +18,14 @@ const ProfilesList = (props) => {
   }, []);
 
   return (
-    <div></div>
+    <div className="profile-container">
+      <BrowseResults />
+      <BrowseResults />
+      <BrowseResults />
+    </div>
   );
 
   
-}
+} 
 
 export default ProfilesList;

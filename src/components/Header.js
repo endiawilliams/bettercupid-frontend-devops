@@ -4,21 +4,24 @@ import { Link } from 'react-router-dom'
 const Header = (props) => {
   return (
     <header className="navbar">
-      <div className="logo">
-        <Link to={'/'}>BetterCupid</Link>
-      </div>
       <div>
-        <Link to={'/about'}>About</Link>
+        <ul>
+          <li><Link to={'/'} className="logo">BetterCupid</Link></li>
+          <li><Link to={'/about'} className="about-link">About</Link></li>
+        </ul>
       </div>
       <div className="links">
         <ul>
           { props.currentUser ? 
             <>
+              <li><Link to={'/browse'}>Browse</Link></li>
+              <li><Link to={'/matches'}>Matches</Link></li>
               <li><Link to={'/profile'}>Profile</Link></li>
               <li><a href="/logout" onClick={ props.logout }>Log Out</a></li>
             </>
           :
             <>
+              <li><Link to={'/browse'}>Browse</Link></li>
               <li><Link to={'/register'}>Register</Link></li>
               <li><Link to={'/login'}>Login</Link></li>
             </>

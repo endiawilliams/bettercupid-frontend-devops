@@ -40,12 +40,6 @@ const Register = props => {
         })
     }
   }
-<<<<<<< HEAD
-
-    
-  
-=======
->>>>>>> submain
   return (
     <div className="register-form card">
       <h4 className="register-header">Register</h4>

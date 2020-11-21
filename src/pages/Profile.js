@@ -5,10 +5,10 @@ import ProfileModel from '../models/profile'
 
 const Profile = (props) => {
   return (
-    <>
+    <div className="profile-container">
       <UserInfo />
       <AboutMe />
-    </>
+    </div>
   )
 }
 

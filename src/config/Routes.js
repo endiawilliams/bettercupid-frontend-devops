@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 
 import Home from '../pages/Home'
 import About from '../pages/About'
+import Matches from '../pages/Matches'
 import Register from '../pages/Register'
 import Login from '../pages/Login'
 import Profile from '../pages/Profile'
@@ -20,6 +21,8 @@ const Routes = (props) => (
   <Switch>
     <Route exact path='/' component={ Home } />
     <Route path='/about' component={ About } />
+    <PrivateRoute path='/matches' component={ Matches } currentUser={ props.currentUser } />
+    <Route path='/browse' component={ Browse } />
     <Route path='/register' component={ Register } />
     <Route path='/login' render={ (routeComponentProps) => {
       return  <Login 

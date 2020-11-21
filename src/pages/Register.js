@@ -7,30 +7,26 @@ const Register = props => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [birthday, setBirthday] = useState('');
+  const [message, setMessage] = useState('')
 
   const handleName = e => {
     setName(e.target.value)
-  }
+  }  
 
   const handleEmail = e => {
     setEmail(e.target.value)
   }
-
   const handlePassword = e => {
     setPassword(e.target.value)
   }
-
   const handleConfirmPassword = e => {
     setConfirmPassword(e.target.value)
   }
-
   const handleBirthday = e => {
     setBirthday(e.target.value)
   }
-
   const handleSubmit = e => {
     e.preventDefault()
-
     if ((Date.now() - birthday) < (18 * 31556952000)) {
       console.log("Sorry, you must be 18 to use this site")
     }
@@ -44,7 +40,6 @@ const Register = props => {
         })
     }
   }
-
   return (
     <div className="register-form card">
       <h4 className="register-header">Register</h4>
@@ -119,5 +114,4 @@ const Register = props => {
     </div>
   )
 }
-
 export default Register;

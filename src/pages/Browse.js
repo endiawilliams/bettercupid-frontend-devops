@@ -1,19 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import ProfileModel from '../models/profile'
-import { Link } from 'react-router-dom'
 
-const ProfilesList = () => {
+const ProfilesList = (props) => {
   const [profiles, setProfiles] = useState([]);
+
   const fetchProfiles = () => {
-    ProfileModel.all().then(data => {
-      // console.log(data);
+    ProfileModel.getProfiles().then(data => {
+      console.log(data);
       setProfiles(data.profiles)
     })
   }
   console.log(profiles)
+
   useEffect(() => {
     fetchProfiles()
   }, []);
-  return [profiles, fetchProfiles];
+
+  return (
+    <div></div>
+  );
+
+  
 }
+
 export default ProfilesList;

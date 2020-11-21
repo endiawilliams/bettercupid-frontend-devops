@@ -7,7 +7,8 @@ const Register = props => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [birthday, setBirthday] = useState('');
-  
+  const [message, setMessage] = useState('')
+
   const handleName = e => {
     setName(e.target.value)
   }  
@@ -15,22 +16,17 @@ const Register = props => {
   const handleEmail = e => {
     setEmail(e.target.value)
   }
-
   const handlePassword = e => {
     setPassword(e.target.value)
   }
-
   const handleConfirmPassword = e => {
     setConfirmPassword(e.target.value)
   }
-
   const handleBirthday = e => {
     setBirthday(e.target.value)
   }
-
   const handleSubmit = e => {
     e.preventDefault()
-
     if ((Date.now() - birthday) < (18 * 31556952000)) {
       console.log("Sorry, you must be 18 to use this site")
     }
@@ -44,16 +40,19 @@ const Register = props => {
         })
     }
   }
+<<<<<<< HEAD
 
     
   
+=======
+>>>>>>> submain
   return (
     <div className="register-form card">
       <h4 className="register-header">Register</h4>
       <form onSubmit={ handleSubmit }>
         <div className="form-group">
           <label htmlFor="name" className="col-form-label">Name</label>
-          <div class="col-sm-10">
+          <div className="col-sm-10">
             <input 
               onChange={ handleName } 
               value={ name }
@@ -66,7 +65,7 @@ const Register = props => {
         </div>
         <div className="form-group">
           <label htmlFor="email" className="col-form-label">Email</label>
-          <div class="col-sm-10">
+          <div className="col-sm-10">
             <input 
               onChange={ handleEmail } 
               value={ email } 
@@ -79,7 +78,7 @@ const Register = props => {
         </div>
         <div className="form-group">
           <label htmlFor="password" className="col-form-label">Password</label>
-          <div class="col-sm-10">
+          <div className="col-sm-10">
             <input 
               onChange={ handlePassword } 
               value={ password } 
@@ -92,7 +91,7 @@ const Register = props => {
         </div>
         <div className="form-group">
           <label htmlFor="confirm-password" className="col-form-label">Confirm Password</label>
-          <div class="col-sm-10">
+          <div className="col-sm-10">
             <input 
               onChange={ handleConfirmPassword } 
               value={ confirmPassword } 
@@ -105,7 +104,7 @@ const Register = props => {
         </div>
         <div className="form-group">
           <label htmlFor="birthday" className="col-form-label">Birthday</label>
-          <div class="col-sm-10">
+          <div className="col-sm-10">
             <input
               onChange={ handleBirthday }
               value={ birthday }

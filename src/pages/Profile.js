@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import UserInfo from '../components/UserInfo';
+import AboutMe from '../components/AboutMe';
+import ProfileModel from '../models/profile'
 
-const Profile = props => {
+const Profile = (props) => {
   return (
-    <h1>Profile of user with ID { props.currentUser }</h1>
+    <div className="profile-container">
+      <UserInfo />
+      <AboutMe />
+    </div>
   )
 }
 
-export default Profile
+export default Profile;

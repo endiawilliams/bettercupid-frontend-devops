@@ -9906,6 +9906,10 @@ body {
   font-size: 2em;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .form-group > label {
   text-align: left;
   padding-left: 15px;
@@ -9930,6 +9934,57 @@ label {
 
 .register-header, .login-header {
   padding-top: 15px;
+}
+
+.user-info {
+  width: 500px;
+}
+
+.info-card-text {
+  margin: 0 auto;
+  height: 100%;
+  padding-top: 18px;
+}
+
+.info-card-button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.about-me {
+  width: 50%;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.profile-container {
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #e83e8c;
+  text-align: left;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar a {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+.navbar a:hover {
+  color: #cccccc;
+}
+.navbar ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.navbar ul li {
+  list-style-type: none;
+  padding: 0px 10px;
 }
 
 /*# sourceMappingURL=index.css.map */

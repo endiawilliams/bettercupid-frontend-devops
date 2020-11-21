@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Routes from './config/Routes'
 import './App.css'
 import UserModel from './models/user'
+import Browse from './pages/Browse'
 
 function App() {
   const [currentUser, setCurrentUser] = useState(localStorage.getItem('id'))
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <div className="App">
+      <Browse />
       <Header 
         currentUser={ currentUser } 
         logout={ logout }

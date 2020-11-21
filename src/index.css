@@ -9953,6 +9953,18 @@ label {
   margin-right: 10px;
 }
 
+.pink-button {
+  background-color: #e83e8c;
+  border-color: #e83e8c;
+  color: white;
+}
+
+.pink-button:hover {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: white;
+}
+
 .about-me {
   width: 100%;
   padding-top: 18px;

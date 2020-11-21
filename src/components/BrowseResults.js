@@ -12,8 +12,8 @@ const BrowseResults = () => {
                     <p>Age</p>
                     <p>Location</p>
                 </div>
-                <a href="#" className="info-card-button">
-                    <img src='https://www.flaticon.com/svg/static/icons/svg/1077/1077071.svg' height='20px' width='20px' alt='message' />
+                <a href="#" className="btn pink-button info-card-button">
+                    View Profile
                 </a>
             </div>
         </div>

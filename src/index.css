@@ -9938,6 +9938,8 @@ label {
 
 .user-info {
   width: 500px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .info-card-text {
@@ -9952,7 +9954,7 @@ label {
 }
 
 .about-me {
-  width: 50%;
+  width: 100%;
   padding-top: 18px;
   padding-bottom: 18px;
 }
@@ -9961,6 +9963,7 @@ label {
   display: inline-flex;
   justify-content: center;
   flex-direction: column;
+  overflow: scroll;
 }
 
 .navbar {
@@ -9969,6 +9972,7 @@ label {
   padding: 20px 10px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 .navbar a {
   color: #fff;

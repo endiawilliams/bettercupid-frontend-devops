@@ -21,6 +21,6 @@ const ProfilesList = (props) => {
   );
 
   
-}
+} 
 
 export default ProfilesList;

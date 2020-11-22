@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProfileModel from '../models/profile';
 
 // check to make sure that on submit an empty field does not erase previous contents
@@ -29,17 +29,30 @@ const EditProfile = props => {
     const handleAboutMe = e => {
         setAboutMe(e.target.value)
     }
+    
+    // useEffect(() => {
+    //     handleSubmit()
+    // }, []);
     const handleSubmit = e => {
         e.preventDefault()
-
-        ProfileModel.editProfile({ 
-            displayName, gender, profilePic, city, geoState, aboutMe 
-        }).then(data => {
-            console.log('Successfully updated profile', data)
+        ProfileModel.getOwnProfile(props.currentUser).then(data => {
+            if (data.profile.userId !== undefined) {
+                ProfileModel.editProfile({
+                    displayName, gender, profilePic, city, geoState, aboutMe
+                }).then(data => {
+                    console.log('Successfully updated profile', data)
+                })
+            } else {
+                ProfileModel.createProfile({
+                    displayName, gender, profilePic, city, geoState, aboutMe
+                }).then(data => {
+                    console.log('Successfully created profile', data)
+                })
+            }
             props.history.push('/profile')
         })
     }
-
+   
     return (
         <div className="edit-profile-form card">
             <h4 className="edit-profile-header">Edit Profile</h4>

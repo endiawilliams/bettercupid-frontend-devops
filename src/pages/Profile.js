@@ -17,6 +17,15 @@ const Profile = (props) => {
   const [state, setState] = useState("");
   // const [state, setState] = useState("");
 
+
+  // this will help us pull the user
+//
+// const getUser = (req,res) => {
+  // db.user.findByPK(req.user.dataValues.id).then((user) => {
+    // res.json({ user })
+  // })
+// }
+
   useEffect(() => {
     fetchProfile()
   }, []);
@@ -24,7 +33,7 @@ const Profile = (props) => {
   const fetchProfile = () => {
     // console.log(props.currentUser)
     ProfileModel.getOwnProfile(props.currentUser).then(data => {
-
+      
       console.log(data.profile.display_name);
       // setProfile(data.profile)
       setDisplayName(data.profile.display_name);

@@ -24,10 +24,12 @@ const Profile = (props) => {
   const fetchProfile = () => {
     // console.log(props.currentUser)
     ProfileModel.getOwnProfile(props.currentUser).then(data => {
-
-      console.log(data.profile.display_name);
+      if (data.profile.displayName = null) {
+        setDisplayName ('update me')
+      }
+      // console.log(data.profile.display_name);
       // setProfile(data.profile)
-      setDisplayName(data.profile.display_name);
+      // setDisplayName(data.profile.display_name);
       setAge(data.profile.age);
       console.log(data.profile)
       setCity(data.profile.city);

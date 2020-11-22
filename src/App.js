@@ -27,7 +27,6 @@ function App() {
 
   return (
     <div className="App">
-      <Browse />
       <Header 
         currentUser={ currentUser } 
         logout={ logout }

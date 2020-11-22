@@ -18,6 +18,7 @@ const UserInfo = () => {
                 <a href="#" className="info-card-button">
                     <img src='https://www.flaticon.com/svg/static/icons/svg/1077/1077071.svg' height='20px' width='20px' alt='message' />
                 </a>
+                <a href="/profile/edit" className="btn pink-button info-card-button">Edit Profile</a>
             </div>
         </div>
     )

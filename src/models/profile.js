@@ -40,7 +40,7 @@ export default class ProfileModel {
     }).then(res => res.json())
   }
 
-  static updateProfile(data) {
+  static editProfile(data) {
     return fetch(`${REACT_APP_API_URL}/profile`, {
       method: "PUT",
       headers: {

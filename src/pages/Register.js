@@ -98,7 +98,7 @@ const Register = props => {
         </div>
         <div className="form-group">
           <label htmlFor="birthday" className="col-form-label">Birthday</label>
-          <div className="col-sm-10">
+          <div className="col-sm-10 wide-inputs">
             <input
               onChange={ handleBirthday }
               value={ birthday }
@@ -109,7 +109,7 @@ const Register = props => {
             />
           </div>
         </div>
-        <button type="submit" className="register-button">Register</button>
+        <button type="submit" className="btn pink-button register-button">Register</button>
       </form>
     </div>
   )

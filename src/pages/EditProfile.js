@@ -32,7 +32,7 @@ const EditProfile = props => {
     const handleSubmit = e => {
         e.preventDefault()
 
-        ProfileModel.updateProfile({ 
+        ProfileModel.editProfile({ 
             displayName, gender, profilePic, city, geoState, aboutMe 
         }).then(data => {
             console.log('Successfully updated profile', data)

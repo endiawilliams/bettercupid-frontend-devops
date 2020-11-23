@@ -26,24 +26,23 @@ const Profile = (props) => {
   // })
 // }
 
-  useEffect(() => {
-    fetchProfile()
-  }, []);
+useEffect(() => {
+  fetchProfile()
+}, []);
 
   const fetchProfile = () => {
-    // console.log(props.currentUser)
     ProfileModel.getOwnProfile(props.currentUser).then(data => {
-      
-      console.log(data.profile.display_name);
-      // setProfile(data.profile)
-      setDisplayName(data.profile.display_name);
-      setAge(data.profile.age);
-      console.log(data.profile)
-      setCity(data.profile.city);
-      setState(data.profile.state);
+      if (data === null || data.profile === null) {
+        return
+      } else {
+        setDisplayName(data.profile.display_name);
+        setAge(data.profile.age);
+        setCity(data.profile.city);
+        setState(data.profile.state);
+      }
     })
   }
-  
+ 
 
   return (
     <div className="profile-container">

@@ -50,6 +50,7 @@ export default class ProfileModel {
       body: JSON.stringify(data)
     }).then(res => res.json())
   }
+  
   static removeProfile(data) {
     return fetch(`${REACT_APP_API_URL}/profile`, {
       method: "DELETE",

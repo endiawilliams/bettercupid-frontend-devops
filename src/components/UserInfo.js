@@ -4,16 +4,12 @@ import UserModel from '../models/user';
 import ProfileModel from '../models/profile';
 
 const UserInfo = (props) => {
-    const currentUserId = props.currentUser
-
     const deleteUser = () => {
         UserModel.deleteUser({
-            currentUserId
         }).then(
             ProfileModel.deleteProfile({
-                currentUserId
             }).then(
-                props.history.push('/')
+                props.history.push('/logout')
             )
         )
     }
@@ -37,7 +33,7 @@ const UserInfo = (props) => {
                     <img src='https://www.flaticon.com/svg/static/icons/svg/1077/1077071.svg' height='20px' width='20px' alt='message' />
                 </a>
                 <a href="/profile/edit" className="btn pink-button info-card-button">Edit</a>
-                <a href="/" className="btn pink-button info-card-button" onClick="deleteUser()">Delete</a>
+                <a href="/" className="btn pink-button info-card-button" onClick={ deleteUser }>Delete</a>
             </div>
         </div>
     )

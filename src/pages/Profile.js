@@ -30,10 +30,12 @@ useEffect(() => {
   fetchProfile()
 }, []);
 
+  
+
   const fetchProfile = () => {
     ProfileModel.getOwnProfile(props.currentUser).then(data => {
       if (data === null || data.profile === null) {
-        return
+        // ProfileModel.createProfile()
       } else {
         setDisplayName(data.profile.display_name);
         setAge(data.profile.age);

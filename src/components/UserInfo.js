@@ -1,7 +1,21 @@
 import React from 'react';
-import Profile from '../pages/Profile'
+import Profile from '../pages/Profile';
+import UserModel from '../models/user';
+import ProfileModel from '../models/profile';
 
 const UserInfo = (props) => {
+    const currentUserId = props.currentUser
+
+    const deleteUser = () => {
+        UserModel.deleteUser({
+            currentUserId
+        }).then(
+            ProfileModel.removeProfile({
+                currentUserId
+            })
+        )
+    }
+    
     return (
         <div className="card flex-row flex-wrap user-info">
             <div className="card-header border-0">
@@ -12,8 +26,7 @@ const UserInfo = (props) => {
                 <h4 className="card-title">{props.displayName}</h4>
                 <div className="card-text">
                     <p>{props.age}</p>
-                    <p>{props.city},{props.state}</p>
-                    
+                    <p>{props.city}, {props.state}</p>
                 </div>
                 <a href="#" className="info-card-button">
                     <img src='https://www.flaticon.com/svg/static/icons/svg/1077/1077035.svg' height='20px' width='20px' alt='heart' />
@@ -21,7 +34,8 @@ const UserInfo = (props) => {
                 <a href="#" className="info-card-button">
                     <img src='https://www.flaticon.com/svg/static/icons/svg/1077/1077071.svg' height='20px' width='20px' alt='message' />
                 </a>
-                <a href="/profile/edit" className="btn pink-button info-card-button">Edit Profile</a>
+                <button href="/profile/edit" className="btn pink-button info-card-button">Edit</button>
+                <button href="/" className="btn pink-button info-card-button" onClick="deleteUser()">Delete</button>
             </div>
         </div>
     )

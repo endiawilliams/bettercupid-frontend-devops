@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import UserModel from '../models/user'
+// import ReCaptcha from 'react-google-recaptcha'
 
 const Register = props => {
   const [name, setName] = useState('');
@@ -8,6 +9,7 @@ const Register = props => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [birthday, setBirthday] = useState('');
   const [message, setMessage] = useState('')
+  // const reRef = userRef<ReCaptcha>();
 
   const handleName = e => {
     setName(e.target.value)
@@ -25,7 +27,7 @@ const Register = props => {
   const handleBirthday = e => {
     setBirthday(e.target.value)
   }
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     if ((Date.now() - birthday) < (18 * 31556952000)) {
       console.log("Sorry, you must be 18 to use this site")
@@ -38,7 +40,14 @@ const Register = props => {
           // redirect to /login
           props.history.push('/login')
         })
-    }
+      }
+
+      // <ReCaptcha siteKey={process.env.NEXT_PUBLIC_captchaKey}
+      // size="invisible"
+      // ref={reRef}
+      // />
+
+      // const token = await reRef.current.executeAsync();
   }
   return (
     <div className="register-form card">

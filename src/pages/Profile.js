@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import UserInfo from '../components/UserInfo';
 import AboutMe from '../components/AboutMe';
-import ProfileModel from '../models/profile'
+import ProfileModel from '../models/profile';
 
 // next steps passing props into user info component
 // do a call to the user table within profile controller
@@ -17,24 +17,23 @@ const Profile = (props) => {
   const [state, setState] = useState("");
   // const [state, setState] = useState("");
 
-  useEffect(() => {
-    fetchProfile()
-  }, []);
-
+  
   const fetchProfile = () => {
-    // console.log(props.currentUser)
     ProfileModel.getOwnProfile(props.currentUser).then(data => {
-
-      console.log(data.profile.display_name);
-      // setProfile(data.profile)
-      setDisplayName(data.profile.display_name);
-      setAge(data.profile.age);
-      console.log(data.profile)
-      setCity(data.profile.city);
-      setState(data.profile.state);
+      if (data === null || data.profile === null) {
+        return
+      } else {
+        setDisplayName(data.profile.display_name);
+        setAge(data.profile.age);
+        setCity(data.profile.city);
+        setState(data.profile.state);
+      }
     })
   }
   
+  useEffect(() => {
+    fetchProfile()
+  }, []);
 
   return (
     <div className="profile-container">

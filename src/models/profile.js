@@ -10,7 +10,7 @@ export default class ProfileModel {
       body: JSON.stringify(data)
     }).then(res => res.json())
   }
-  static getOwnProfile(data) {
+  static getOwnProfile() {
     return fetch(`${REACT_APP_API_URL}/profile`, {
       method: "GET",
       headers: {
@@ -50,13 +50,14 @@ export default class ProfileModel {
       body: JSON.stringify(data)
     }).then(res => res.json())
   }
-  static removeProfile(data) {
+  static deleteProfile(data) {
     return fetch(`${REACT_APP_API_URL}/profile`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
       },
-      credentials: "include"
+      credentials: "include",
+      body: JSON.stringify(data)
     }).then(res => res.json())
   }
 

@@ -40,8 +40,8 @@ export default class ProfileModel {
     }).then(res => res.json())
   }
 
-  static updateProfile(data) {
-    return fetch(`${REACT_APP_API_URL}/profile`, {
+  static updateProfile(data, userId) {
+    return fetch(`${REACT_APP_API_URL}/profile/${userId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"

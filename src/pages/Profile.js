@@ -17,16 +17,10 @@ const Profile = (props) => {
   const [state, setState] = useState("");
   // const [state, setState] = useState("");
 
-  useEffect(() => {
-    fetchProfile()
-  }, []);
-
   const fetchProfile = () => {
     // console.log(props.currentUser)
     ProfileModel.getOwnProfile(props.currentUser).then(data => {
-      if (data.profile.displayName === null) {
-        setDisplayName )
-      }
+     
       console.log(data.profile.display_name);
       // setProfile(data.profile)
       setDisplayName(data.profile.display_name);
@@ -36,6 +30,10 @@ const Profile = (props) => {
       setState(data.profile.state);
     })
   }
+
+  useEffect(() => {
+    fetchProfile()
+  }, []);
   
 
   return (

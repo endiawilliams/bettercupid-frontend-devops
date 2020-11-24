@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ProfileModel from '../models/profile';
 // check to make sure that on submit an empty field does not erase previous contents
 // remove /editprofile/:id route so users can't edit another user's profile?
+
 const EditProfile = (props) => {
   const [displayName, setDisplayName] = useState('');
   const [gender, setGender] = useState('');
@@ -9,51 +10,34 @@ const EditProfile = (props) => {
   const [city, setCity] = useState('');
   const [geoState, setGeoState] = useState('');
   const [aboutMe, setAboutMe] = useState('');
-
-  const handleDisplayName = (e) => {
-    setDisplayName(e.target.value)
+  const currentUserId = props.currentUser
+  const handleDisplayName = e => {
+      setDisplayName(e.target.value)
   }
-  const handleGender = (e) => {
-    setGender(e.target.value)
+  const handleGender = e => {
+      setGender(e.target.value)
   }
-  const handleProfilePic =(e) => {
-    setProfilePic(e.target.value)
+  const handleProfilePic = e => {
+      setProfilePic(e.target.value)
   }
-  const handleCity = (e) => {
-    setCity(e.target.value)
+  const handleCity = e => {
+      setCity(e.target.value)
   }
-  const handleGeoState = (e) => {
-    setGeoState(e.target.value)
+  const handleGeoState = e => {
+      setGeoState(e.target.value)
   }
-  const handleAboutMe = (e) => {
-    setAboutMe(e.target.value)
+  const handleAboutMe = e => {
+      setAboutMe(e.target.value)
   }
-  
-  // useEffect(() => {
-  //   handleSubmit()
-  // }, []);
-
   const handleSubmit = (e) => {
-    e.preventDefault()
-    ProfileModel.getOwnProfile(props.currentUser).then(data => {
-      console.log(data)
-      if (data.profile === null) {
-        ProfileModel.createProfile({
-          displayName, gender, profilePic, city, geoState, aboutMe
-        }).then(data => {
-          console.log('Successfully created profile', data)
-        })
-      } else {
-        ProfileModel.editProfile({
-          displayName, gender, profilePic, city, geoState, aboutMe
-        }).then(data => {
+      e.preventDefault()
+      ProfileModel.editProfile({
+          currentUserId, displayName, gender, profilePic, city, geoState, aboutMe
+      }).then(data => {
           console.log('Successfully updated profile', data)
-        })
-      }
-      props.history.push('/profile')
-    })
+          props.history.push('/profile')
+      })
   }
-
   
 
   return (

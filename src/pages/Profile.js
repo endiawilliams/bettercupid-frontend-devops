@@ -17,34 +17,22 @@ const Profile = (props) => {
   const [state, setState] = useState("");
   // const [state, setState] = useState("");
 
-
-  // this will help us pull the user
-//
-// const getUser = (req,res) => {
-  // db.user.findByPK(req.user.dataValues.id).then((user) => {
-    // res.json({ user })
-  // })
-// }
-
-useEffect(() => {
-  fetchProfile()
-}, []);
-
-  
-
   const fetchProfile = () => {
-    ProfileModel.getOwnProfile(props.currentUser).then(data => {
-      if (data === null || data.profile === null) {
-        // ProfileModel.createProfile()
+    ProfileModel.getOwnProfile().then(data => {
+      if (!data) {
+        return
       } else {
-        setDisplayName(data.profile.display_name);
-        setAge(data.profile.age);
-        setCity(data.profile.city);
-        setState(data.profile.state);
+        setDisplayName(data.display_name);
+        setAge(data.age);
+        setCity(data.city);
+        setState(data.state);
       }
     })
   }
- 
+
+  useEffect(() => {
+    fetchProfile()
+  }, []);
 
   return (
     <div className="profile-container">

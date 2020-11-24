@@ -18,8 +18,8 @@ const Profile = (props) => {
   // const [state, setState] = useState("");
 
   const fetchProfile = () => {
-    ProfileModel.getOwnProfile(props.currentUser).then(data => {
-      if (data === null) {
+    ProfileModel.getOwnProfile().then(data => {
+      if (!data) {
         return
       } else {
         setDisplayName(data.display_name);

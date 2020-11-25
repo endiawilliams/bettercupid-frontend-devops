@@ -6,7 +6,7 @@ const ProfilesList = (props) => {
   const [profiles, setProfiles] = useState([]);
 
   const fetchProfiles = () => {
-    ProfileModel.getProfiles().then(data => {
+    ProfileModel.getAllProfiles().then(data => {
       console.log(data);
       setProfiles(data.profiles)
     })

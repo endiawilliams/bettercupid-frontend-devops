@@ -30,28 +30,6 @@ const EditProfile = (props) => {
     const handleAboutMe = e => {
         setAboutMe(e.target.value)
     }
-<<<<<<< HEAD
-    
-    // useEffect(() => {
-    //     handleSubmit()
-    // }, []);
-    const handleSubmit = e => {
-        e.preventDefault()
-        ProfileModel.getOwnProfile(props.currentUser).then(data => {
-            if (data.profile.userId !== undefined) {
-                ProfileModel.editProfile({
-                    displayName, gender, profilePic, city, geoState, aboutMe
-                }).then(data => {
-                    console.log('Successfully updated profile', data)
-                })
-            } else {
-                ProfileModel.createProfile({
-                    displayName, gender, profilePic, city, geoState, aboutMe
-                }).then(data => {
-                    console.log('Successfully created profile', data)
-                })
-            }
-=======
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -60,7 +38,6 @@ const EditProfile = (props) => {
             currentUserId, displayName, gender, profilePic, city, geoState, aboutMe
         }).then(data => {
             console.log('Successfully updated profile', data)
->>>>>>> submain
             props.history.push('/profile')
         })
     }

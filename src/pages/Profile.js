@@ -18,23 +18,21 @@ const Profile = (props) => {
   // const [state, setState] = useState("");
 
   const fetchProfile = () => {
-    // console.log(props.currentUser)
-    ProfileModel.getOwnProfile(props.currentUser).then(data => {
-     
-      console.log(data.profile.display_name);
-      // setProfile(data.profile)
-      setDisplayName(data.profile.display_name);
-      setAge(data.profile.age);
-      console.log(data.profile)
-      setCity(data.profile.city);
-      setState(data.profile.state);
+    ProfileModel.getOwnProfile().then(data => {
+      if (!data) {
+        return
+      } else {
+        setDisplayName(data.display_name);
+        setAge(data.age);
+        setCity(data.city);
+        setState(data.state);
+      }
     })
   }
 
   useEffect(() => {
     fetchProfile()
   }, []);
-  
 
   return (
     <div className="profile-container">

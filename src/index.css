@@ -9923,16 +9923,16 @@ label {
   font-weight: bold;
 }
 
-.register-form, .login-form {
+.register-form, .login-form, .edit-profile-form {
   display: inline-flex;
   align-items: center;
 }
 
-.register-button, .login-button {
+.register-button, .login-button, .submit-button {
   margin-bottom: 15px;
 }
 
-.register-header, .login-header {
+.register-header, .login-header, .edit-profile-header {
   padding-top: 15px;
 }
 

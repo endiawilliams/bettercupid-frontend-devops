@@ -10,7 +10,7 @@ export default class ProfileModel {
       body: JSON.stringify(data)
     }).then(res => res.json())
   }
-  static getOwnProfile(data) {
+  static getOwnProfile() {
     return fetch(`${REACT_APP_API_URL}/profile`, {
       method: "GET",
       headers: {
@@ -40,8 +40,13 @@ export default class ProfileModel {
     }).then(res => res.json())
   }
 
+<<<<<<< HEAD
   static updateProfile(data, userId) {
     return fetch(`${REACT_APP_API_URL}/profile/${userId}`, {
+=======
+  static editProfile(data) {
+    return fetch(`${REACT_APP_API_URL}/profile`, {
+>>>>>>> tess
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -50,14 +55,19 @@ export default class ProfileModel {
       body: JSON.stringify(data)
     }).then(res => res.json())
   }
+<<<<<<< HEAD
   
   static removeProfile(data) {
+=======
+  static deleteProfile(data) {
+>>>>>>> tess
     return fetch(`${REACT_APP_API_URL}/profile`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
       },
-      credentials: "include"
+      credentials: "include",
+      body: JSON.stringify(data)
     }).then(res => res.json())
   }
 

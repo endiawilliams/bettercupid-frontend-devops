@@ -3,13 +3,14 @@ import ProfileModel from '../models/profile';
 
 // check to make sure that on submit an empty field does not erase previous contents
 // remove /editprofile/:id route so users can't edit another user's profile?
-const EditProfile = props => {
+const EditProfile = (props) => {
     const [displayName, setDisplayName] = useState('');
     const [gender, setGender] = useState('');
     const [profilePic, setProfilePic] = useState('');
     const [city, setCity] = useState('');
     const [geoState, setGeoState] = useState('');
     const [aboutMe, setAboutMe] = useState('');
+    const currentUserId = props.currentUser
 
     const handleDisplayName = e => {
         setDisplayName(e.target.value)
@@ -29,26 +30,14 @@ const EditProfile = props => {
     const handleAboutMe = e => {
         setAboutMe(e.target.value)
     }
-    
-    // useEffect(() => {
-    //     handleSubmit()
-    // }, []);
-    const handleSubmit = e => {
+
+    const handleSubmit = (e) => {
         e.preventDefault()
-        ProfileModel.updateProfile({datafromline41}, props.currentUser).then(data => {
-            if (data.profile.userId !== undefined) {
-                ProfileModel.editProfile({
-                    displayName, gender, profilePic, city, geoState, aboutMe
-                }).then(data => {
-                    console.log('Successfully updated profile', data)
-                })
-            } else {
-                ProfileModel.createProfile({
-                    displayName, gender, profilePic, city, geoState, aboutMe
-                }).then(data => {
-                    console.log('Successfully created profile', data)
-                })
-            }
+
+        ProfileModel.editProfile({
+            currentUserId, displayName, gender, profilePic, city, geoState, aboutMe
+        }).then(data => {
+            console.log('Successfully updated profile', data)
             props.history.push('/profile')
         })
     }

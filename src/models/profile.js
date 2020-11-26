@@ -1,8 +1,8 @@
 const REACT_APP_API_URL = "http://localhost:4000/api/v1"
 
 export default class ProfileModel {
-  static getProfiles(data) {
-    return fetch(`${REACT_APP_API_URL}/profile`, {
+  static getAllProfiles(data) {
+    return fetch(`${REACT_APP_API_URL}/profile/browse`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"

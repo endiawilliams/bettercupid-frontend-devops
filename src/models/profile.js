@@ -60,9 +60,6 @@ export default class ProfileModel {
       body: JSON.stringify(data)
     }).then(res => res.json())
   }
-
-  
-
 }
 
 

@@ -9,10 +9,14 @@ const UserInfo = (props) => {
         }).then(
             ProfileModel.deleteProfile({
             }).then(
-                props.history.push('/logout')
+                UserModel.logout({
+                }).then(
+                    localStorage.clear()
+                )
             )
         )
     }
+
     console.log("🥶", props)
     return (
         <div className="card flex-row flex-wrap user-info">

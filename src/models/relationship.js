@@ -11,7 +11,6 @@ export default class RelationshipModel {
       body: JSON.stringify(data)
     }).then(res => res.json())
   }
-
   static unlikeUser(data) {
     return fetch(`${REACT_APP_API_URL}/relationship`, {
       method: "DELETE",

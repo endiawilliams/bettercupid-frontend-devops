@@ -15,6 +15,8 @@ const Profile = (props) => {
   const [age, setAge] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
+  const [aboutMe, setAboutMe] = useState("")
+  
   // const [state, setState] = useState("");
 
   const fetchProfile = () => {
@@ -26,9 +28,12 @@ const Profile = (props) => {
         setAge(data.age);
         setCity(data.city);
         setState(data.state);
+        setAboutMe(data.about_me)
       }
     })
   }
+
+  console.log(aboutMe)
 
   useEffect(() => {
     fetchProfile()
@@ -37,8 +42,8 @@ const Profile = (props) => {
   return (
     <div className="profile-container">
     
-      <UserInfo displayName={displayName} age={age} city={city} state={state}/>
-      <AboutMe />
+      <UserInfo displayName={displayName} age={age} city={city} state={state} />
+      <AboutMe aboutMe={aboutMe} />
     </div>
   )
 }

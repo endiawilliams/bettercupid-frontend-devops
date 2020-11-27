@@ -12,6 +12,7 @@ const BrowseResults = (props) => {
                 <h4 className="card-title">{props.displayName}</h4>
                 <div className="card-text">
                     <p>{props.city}, {props.state}</p>
+                    <p>{props.aboutMe}</p>
                 </div>
                 <a href="#" className="btn pink-button info-card-button">
                     View Profile

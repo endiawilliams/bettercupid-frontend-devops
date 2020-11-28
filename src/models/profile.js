@@ -42,7 +42,7 @@ export default class ProfileModel {
 
   static editProfile(data) {
     return fetch(`${REACT_APP_API_URL}/profile`, {
-      method: "PUT",
+      method: "POST",
       headers: {
         "Content-Type": "application/json"
       },

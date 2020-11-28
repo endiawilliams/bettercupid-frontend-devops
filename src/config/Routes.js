@@ -38,8 +38,7 @@ const Routes = (props) => (
     }} />
 
 
-    <PrivateRoute path='/profile/:id' component={ViewProfile} currentUser={props.targetProfile} 
-      
+    <PrivateRoute path='/profile/:id' component={ViewProfile} currentUser={props.currentUser}  
     />
     
     <PrivateRoute path='/profile' component={Profile} currentUser={props.currentUser} />

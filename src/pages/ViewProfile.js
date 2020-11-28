@@ -15,7 +15,7 @@ const ViewProfileInfo = (props) => {
   const viewProfile = () => {
     // extract the user id
     ProfileModel.viewProfile(props.match.params.id).then((data) => { 
-      console.log(data.profile.display_name)
+      console.log(data.profile)
       setDisplayName(data.profile.display_name);
         setAge(data.profile.age);
         setCity(data.profile.city);
@@ -26,7 +26,8 @@ const ViewProfileInfo = (props) => {
   useEffect(() => {
     viewProfile()
   }, []);
-
+  // should targetProfile be data.profile.userId?
+  
   return (
     <div className="profile-container">
       <ViewProfile displayName={ displayName } age={ age } city={ city } 

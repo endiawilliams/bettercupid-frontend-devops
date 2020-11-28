@@ -14,31 +14,6 @@ const ViewProfileInfo = (props) => {
   const recipientId = props.targetProfile
   const currentUser = props.currentUser
 
-  const deleteUser = () => {
-    UserModel.deleteUser({
-    }).then(
-      ProfileModel.deleteProfile({
-      }).then(
-        localStorage.clear()
-        )
-      )
-  }
-
-//   const toggleImage = useCallback(() => 
-//     setIsLiked(!isLiked),
-//     [isLiked, setIsLiked]
-//   )
-
-//   const updateRelationship = () => {
-//     toggleImage()
-
-//     if (isLiked === false) {
-//       RelationshipModel.unlikeUser()
-//     } else {
-//       RelationshipModel.likeUser()
-//     }
-//   }
-
   const updateLikeStatus = (currentUser) => {
     if (isLiked) {
       RelationshipModel.unlikeUser(

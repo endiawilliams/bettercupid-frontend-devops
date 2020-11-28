@@ -17,7 +17,6 @@ const UserInfo = (props) => {
     )
   }
 
-  console.log("🥶", props)
   return (
     <div className="card flex-row flex-wrap user-info">
       <div className="card-header border-0">

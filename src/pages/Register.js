@@ -13,7 +13,7 @@ const Register = props => {
 
   const handleName = e => {
     setName(e.target.value)
-  }  
+  }
 
   const handleEmail = e => {
     setEmail(e.target.value)
@@ -40,28 +40,28 @@ const Register = props => {
           // redirect to /login
           props.history.push('/login')
         })
-      }
+    }
 
-      // <ReCaptcha siteKey={process.env.NEXT_PUBLIC_captchaKey}
-      // size="invisible"
-      // ref={reRef}
-      // />
+    // <ReCaptcha siteKey={process.env.NEXT_PUBLIC_captchaKey}
+    // size="invisible"
+    // ref={reRef}
+    // />
 
-      // const token = await reRef.current.executeAsync();
+    // const token = await reRef.current.executeAsync();
   }
   return (
     <div className="register-form card">
       <h4 className="register-header">Register</h4>
-      <form onSubmit={ handleSubmit }>
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name" className="col-form-label">Name</label>
           <div className="col-sm-10">
-            <input 
-              onChange={ handleName } 
-              value={ name }
-              type="text" 
-              id="name" 
-              name="name" 
+            <input
+              onChange={handleName}
+              value={name}
+              type="text"
+              id="name"
+              name="name"
               required
             />
           </div>
@@ -69,12 +69,12 @@ const Register = props => {
         <div className="form-group">
           <label htmlFor="email" className="col-form-label">Email</label>
           <div className="col-sm-10">
-            <input 
-              onChange={ handleEmail } 
-              value={ email } 
-              type="email" 
-              id="email" 
-              name="email" 
+            <input
+              onChange={handleEmail}
+              value={email}
+              type="email"
+              id="email"
+              name="email"
               required
             />
           </div>
@@ -82,25 +82,25 @@ const Register = props => {
         <div className="form-group">
           <label htmlFor="password" className="col-form-label">Password</label>
           <div className="col-sm-10">
-            <input 
-              onChange={ handlePassword } 
-              value={ password } 
-              type="password" 
-              id="password" 
-              name="password" 
+            <input
+              onChange={handlePassword}
+              value={password}
+              type="password"
+              id="password"
+              name="password"
               required
             />
-          </div>  
+          </div>
         </div>
         <div className="form-group">
           <label htmlFor="confirm-password" className="col-form-label">Confirm Password</label>
           <div className="col-sm-10">
-            <input 
-              onChange={ handleConfirmPassword } 
-              value={ confirmPassword } 
-              type="password" 
-              id="confirm-password" 
-              name="confirm-password" 
+            <input
+              onChange={handleConfirmPassword}
+              value={confirmPassword}
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
               required
             />
           </div>
@@ -109,8 +109,8 @@ const Register = props => {
           <label htmlFor="birthday" className="col-form-label">Birthday</label>
           <div className="col-sm-10 wide-inputs">
             <input
-              onChange={ handleBirthday }
-              value={ birthday }
+              onChange={handleBirthday}
+              value={birthday}
               type="date"
               id="birthday"
               name="birthday"

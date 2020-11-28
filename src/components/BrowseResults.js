@@ -1,6 +1,10 @@
 import React from 'react';
 import Browse from '../pages/Browse';
+import { Link } from 'react-router-dom'
+import Router from 'react-router-dom'
+
 const BrowseResults = (props) => {
+  console.log(props)
   return (
     <div className="card flex-row flex-wrap user-info">
       <div className="card-header border-0">
@@ -11,9 +15,8 @@ const BrowseResults = (props) => {
         <div className="card-text">
           <p>{props.city}, {props.state}</p>
         </div>
-        <a href="#" className="btn pink-button info-card-button">
-          View Profile
-                </a>
+        <Link to={'/profile/' + props.userId} className="btn pink-button info-card-button">
+          View Profile</Link>
       </div>
     </div>
   )

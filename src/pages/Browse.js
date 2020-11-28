@@ -7,12 +7,14 @@ const ProfilesList = (props) => {
   const [displayName, setDisplayName] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
-  const [userId, setUserIds] = useState("")
+  const [userId, setUserId] = useState("")
   
   let displayNames = [];
   let cities = [];
   let states = []
   let userIds = [];
+
+  
   
   const fetchProfiles = () => {
     ProfileModel.getAllProfiles().then(data => {
@@ -25,19 +27,21 @@ const ProfilesList = (props) => {
       setDisplayName(displayNames);
       setCity(cities);
       setState(states);
-      setUserIds(userIds);
+      setUserId(userIds);
+      console.log(data.profiles);
     })
   }
-  
+  console.log(userId);
+
   useEffect(() => {
     fetchProfiles()
   }, []);
   
   return (
     <div className="profile-container">
-      <BrowseResults displayName={displayName[0]} city={city[0]} state={state[0]} userID={userIds[0]}/>
-      <BrowseResults displayName={displayName[1]} city={city[1]} state={state[1]} />
-      <BrowseResults displayName={displayName[2]} city={city[2]} state={state[2]} />
+      <BrowseResults displayName={displayName[0]} city={city[0]} state={state[0]} userId={userId[0]}/>
+      <BrowseResults displayName={displayName[1]} city={city[1]} state={state[1]} userId={userId[0]}/>
+      <BrowseResults displayName={displayName[2]} city={city[2]} state={state[2]} userId={userId[0]}/>
       
     </div>
   );

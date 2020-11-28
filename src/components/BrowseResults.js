@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import Router from 'react-router-dom'
 
 const BrowseResults = (props) => {
-  console.log(props)
   return (
     <div className="card flex-row flex-wrap user-info">
       <div className="card-header border-0">

@@ -21,7 +21,7 @@ export default class ProfileModel {
   }
 
   static viewProfile(data) {
-    return fetch(`${REACT_APP_API_URL}/profile`, {
+    return fetch(`${REACT_APP_API_URL}/profile/`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"

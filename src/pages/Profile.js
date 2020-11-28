@@ -33,11 +33,15 @@ const Profile = (props) => {
     })
   }
 
-  console.log(aboutMe)
-
   useEffect(() => {
     fetchProfile()
   }, []);
+
+ 
+
+ 
+
+ 
 
   return (
     <div className="profile-container">

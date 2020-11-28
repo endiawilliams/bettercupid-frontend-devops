@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import UserInfo from '../components/UserInfo';
 import AboutMe from '../components/AboutMe';
-import ProfileModel from '../models/profile'
+import ProfileModel from '../models/profile';
 
 // next steps passing props into user info component
 // do a call to the user table within profile controller
@@ -15,7 +15,7 @@ const Profile = (props) => {
   const [age, setAge] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
-  // const [state, setState] = useState("");
+  const [targetProfile, setTargetProfile] = useState("");
 
   const fetchProfile = () => {
     ProfileModel.getOwnProfile().then(data => {
@@ -32,12 +32,21 @@ const Profile = (props) => {
 
   useEffect(() => {
     fetchProfile()
+    testVar()
   }, []);
+
+  const testVar = () => {
+    setTargetProfile(props.match.params.id)
+  }
+
+  console.log(props)
+
+  console.log('The target profile is: ' + props.match.params.id)
 
   return (
     <div className="profile-container">
-    
-      <UserInfo displayName={displayName} age={age} city={city} state={state}/>
+      <UserInfo displayName={displayName} age={age} city={city} 
+      state={state} targetProfile={targetProfile}/>
       <AboutMe />
     </div>
   )

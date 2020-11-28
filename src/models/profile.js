@@ -20,13 +20,8 @@ export default class ProfileModel {
     }).then(res => res.json())
   }
 
-<<<<<<< HEAD
-  static viewProfile(data) {
-    return fetch(`${REACT_APP_API_URL}/profile/`, {
-=======
   static viewProfile(userId) {
     return fetch(`${REACT_APP_API_URL}/profile/${userId}`, {
->>>>>>> submain
       method: "GET",
       headers: {
         "Content-Type": "application/json"

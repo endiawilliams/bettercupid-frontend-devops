@@ -20,8 +20,13 @@ export default class ProfileModel {
     }).then(res => res.json())
   }
 
+<<<<<<< HEAD
   static viewProfile(data) {
     return fetch(`${REACT_APP_API_URL}/profile/`, {
+=======
+  static viewProfile(userId) {
+    return fetch(`${REACT_APP_API_URL}/profile/${userId}`, {
+>>>>>>> submain
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -31,7 +36,7 @@ export default class ProfileModel {
   }
 
   static createProfile(data) {
-    return fetch(`${REACT_APP_API_URL}/profile`, {
+    return fetch(`${REACT_APP_API_URL}/profile/edit`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -42,7 +47,7 @@ export default class ProfileModel {
 
   static editProfile(data) {
     return fetch(`${REACT_APP_API_URL}/profile`, {
-      method: "PUT",
+      method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
@@ -60,9 +65,6 @@ export default class ProfileModel {
       body: JSON.stringify(data)
     }).then(res => res.json())
   }
-
-  
-
 }
 
 

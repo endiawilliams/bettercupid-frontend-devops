@@ -7,16 +7,11 @@ import ProfileModel from '../models/profile';
 // next steps passing props into user info component
 // do a call to the user table within profile controller
 // do another const fetch user in addition to fetchProfile
-const Profile = (props) => {
-  // const [profile, setProfile] = useState("");
-  //  displayName = {
-        // this.setState = displayName
-  // }
+const Profile = (props) => { 
   const [displayName, setDisplayName] = useState("");
   const [age, setAge] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
-  // const [state, setState] = useState("");
 
   const fetchProfile = () => {
     ProfileModel.getOwnProfile().then(data => {

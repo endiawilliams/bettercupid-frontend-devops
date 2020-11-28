@@ -9,12 +9,9 @@ const UserInfo = (props) => {
     }).then(
       ProfileModel.deleteProfile({
       }).then(
-        UserModel.logout({
-        }).then(
-          localStorage.clear()
+        localStorage.clear()
         )
       )
-    )
   }
 
   return (

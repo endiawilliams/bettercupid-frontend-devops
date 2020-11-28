@@ -4,21 +4,22 @@ import ProfileModel from '../models/profile';
 
 const ProfilesList = (props) => {
   const [profiles, setProfiles] = useState([]);
-  const [displayName, setDisplayName] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [userId, setUserId] = useState("")
+  const [displayName, setDisplayName] = useState('');
+  const [age, setAge] = useState('');
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
+  const [userId, setUserId] = useState('');
   
-  let displayNames = [];
-  let cities = [];
+  let displayNames = []
+  let cities = []
   let states = []
-  let userIds = [];
-
-  
+  let userIds = []
   
   const fetchProfiles = () => {
     ProfileModel.getAllProfiles().then(data => {
-      for (let i = 0; i < 3; i++) {
+      // note: if data.profiles.length is less than 3, then some user info cards
+      // will appear blank. Render dynamic number of instances of that component? 
+      for (let i = 0; i < data.profiles.length; i++) {
         displayNames.push(data.profiles[i].display_name)
         cities.push(data.profiles[i].city)
         states.push(data.profiles[i].state)
@@ -31,7 +32,7 @@ const ProfilesList = (props) => {
       console.log(data.profiles);
     })
   }
-  console.log(userId);
+  console.log('The userId is: ' + userId[0]);
 
   useEffect(() => {
     fetchProfiles()
@@ -39,10 +40,14 @@ const ProfilesList = (props) => {
   
   return (
     <div className="profile-container">
-      <BrowseResults displayName={displayName[0]} city={city[0]} state={state[0]} userId={userId[0]}/>
-      <BrowseResults displayName={displayName[1]} city={city[1]} state={state[1]} userId={userId[1]}/>
-      <BrowseResults displayName={displayName[2]} city={city[2]} state={state[2]} userId={userId[2]}/>
-      
+    {/* create a for loop to dynamically render a different number of BrowseResults
+    components depending on how many users exist in the database */}
+      <BrowseResults displayName={ displayName[0] } city={ city[0] } 
+      state={ state[0] } userId={ userId[0] } />
+      <BrowseResults displayName={ displayName[1] } city={ city[1] } 
+      state={ state[1] } userId={ userId[1] } />
+      <BrowseResults displayName={ displayName[2] } city={ city[2] } 
+      state={ state[2] } userId={ userId[2] } />
     </div>
   );
 }

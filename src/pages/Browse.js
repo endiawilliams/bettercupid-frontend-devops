@@ -14,7 +14,7 @@ const ProfilesList = (props) => {
   let cities = []
   let states = []
   let userIds = []
-
+  
   const fetchProfiles = () => {
     ProfileModel.getAllProfiles().then(data => {
       for (let i = 0; i < 3; i++) {
@@ -23,26 +23,28 @@ const ProfilesList = (props) => {
         states.push(data.profiles[i].state)
         userIds.push(data.profiles[i].userId)
       }
-      setDisplayName(displayNames)
-      setCity(cities)
-      setState(states)
-      setUserId(userIds)
+      setDisplayName(displayNames);
+      setCity(cities);
+      setState(states);
+      setUserId(userIds);
+      console.log(data.profiles);
     })
   }
+  console.log(userId);
 
   useEffect(() => {
     fetchProfiles()
   }, []);
-
+  
   return (
     <div className="profile-container">
-      <BrowseResults displayName={ displayName[0] } city={ city[0] } state={ state[0] } userId={ userId[0] } />
-      <BrowseResults displayName={ displayName[1] } city={ city[1] } state={ state[1] } userId={ userId[1] } />
-      <BrowseResults displayName={ displayName[2] } city={ city[2] } state={ state[2] } userId={ userId[2] } />
+      <BrowseResults displayName={ displayName[0] } city={ city[0] } 
+      state={ state[0] } userId={ userId[0] } />
+      <BrowseResults displayName={ displayName[1] } city={ city[1] } 
+      state={ state[1] } userId={ userId[1] } />
+      <BrowseResults displayName={ displayName[2] } city={ city[2] } 
+      state={ state[2] } userId={ userId[2] } />
     </div>
   );
-
-  
-} 
-
+}
 export default ProfilesList;

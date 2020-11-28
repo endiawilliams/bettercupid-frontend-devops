@@ -34,20 +34,30 @@ const Profile = (props) => {
     fetchProfile()
     testVar()
   }, []);
+ 
+  console.log(props)
 
-  const testVar = () => {
-    setTargetProfile(props.match.params.id)
+  const viewProfile = () => {
+    // extract the user id
+    ProfileModel.viewProfile(props.match.params.id).then(data =>
+      {
+        console.log(data)
+        console.log(data.profile.id)
+      })
   }
 
-  console.log(props)
+  useEffect(() => {
+    viewProfile()
+  }, []);
 
   console.log('The target profile is: ' + props.match.params.id)
 
   return (
     <div className="profile-container">
-      <UserInfo displayName={displayName} age={age} city={city} 
-      state={state} targetProfile={targetProfile}/>
+      <UserInfo displayName={ displayName } age={ age } city={ city } 
+      state={ state } targetProfile={ targetProfile } />
       <AboutMe />
+       
     </div>
   )
 }

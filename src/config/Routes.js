@@ -9,6 +9,7 @@ import Login from '../pages/Login'
 import Profile from '../pages/Profile'
 import Browse from '../pages/Browse'
 import EditProfile from '../pages/EditProfile'
+import ViewProfile from '../pages/ViewProfile'
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const currentUser = localStorage.getItem('id')
@@ -19,6 +20,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 const Routes = (props) => (
+  
   <Switch>
     <Route exact path='/' component={Home} />
     <Route path='/about' component={About} />
@@ -35,7 +37,9 @@ const Routes = (props) => (
       />
     }} />
 
-    <PrivateRoute path='/profile/:id' component={Profile} currentUser={props.currentUser} />
+
+    <PrivateRoute path='/profile/:id' component={ViewProfile} currentUser={props.currentUser}  
+    />
     
     <PrivateRoute path='/profile' component={Profile} currentUser={props.currentUser} />
 

@@ -11,6 +11,7 @@ const EditProfile = (props) => {
   const [geoState, setGeoState] = useState('');
   const [aboutMe, setAboutMe] = useState('');
   const currentUserId = props.currentUser
+  
   const handleDisplayName = e => {
       setDisplayName(e.target.value)
   }

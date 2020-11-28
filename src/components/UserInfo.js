@@ -10,6 +10,8 @@ import RelationshipModel from '../models/relationship';
 
 const UserInfo = (props) => {
   const [isLiked, setIsLiked] = useState(false)
+  const recipientId = props.targetProfile
+  const currentUser = props.currentUser
 
   const deleteUser = () => {
     UserModel.deleteUser({
@@ -36,11 +38,25 @@ const UserInfo = (props) => {
 //     }
 //   }
 
-  const updateRelationship = () => {
-    RelationshipModel.likeUser({
-        // targetProfile
-    })
+  const updateLikeStatus = (currentUser) => {
+    if (isLiked) {
+      RelationshipModel.unlikeUser(
+        { currentUser },
+        recipientId
+      ).then(() => 
+        setIsLiked(false)
+      )
+    } else {
+      RelationshipModel.likeUser(
+        { currentUser },
+        recipientId
+      ).then(() =>
+        setIsLiked(true)
+      )
+    }
   }
+
+  // console.log(props.targetProfile)
 
   return (
     <div className="card flex-row flex-wrap user-info">
@@ -54,7 +70,7 @@ const UserInfo = (props) => {
           <p>{props.age}</p>
           <p>{props.city}, {props.state}</p>
         </div>
-        <a href="#" className="info-card-button" onClick={ updateRelationship }>
+        <a href="#" className="info-card-button" onClick={() => updateLikeStatus(props.currentUser) }>
           {isLiked
             ? <img src='https://i.imgur.com/7LesXMV.png' height='20px' width='20px' alt='heart' />
             : <img src='https://www.flaticon.com/svg/static/icons/svg/1077/1077035.svg' height='20px' width='20px' alt='heart' />

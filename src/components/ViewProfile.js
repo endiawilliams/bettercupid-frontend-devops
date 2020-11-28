@@ -9,7 +9,7 @@ import UserModel from '../models/user';
 import ProfileModel from '../models/profile';
 import RelationshipModel from '../models/relationship';
 
-const UserInfo = (props) => {
+const ViewProfileInfo = (props) => {
   const [isLiked, setIsLiked] = useState(false)
   const recipientId = props.targetProfile
   const currentUser = props.currentUser
@@ -80,11 +80,10 @@ const UserInfo = (props) => {
         <a href="#" className="info-card-button">
           <img src='https://www.flaticon.com/svg/static/icons/svg/1077/1077071.svg' height='20px' width='20px' alt='message' />
         </a>
-        <a href="/profile/edit" className="btn pink-button info-card-button">Edit</a>
-        <a href="/" className="btn pink-button info-card-button" onClick={deleteUser}>Delete</a>
+
       </div>
     </div>
   )
 }
 
-export default UserInfo
+export default ViewProfileInfo;

@@ -32,7 +32,7 @@ const ProfilesList = (props) => {
       console.log(data.profiles);
     })
   }
-  console.log('The userId is: ' + userId[0]);
+  console.log('The userIds: ' + userId);
 
   useEffect(() => {
     fetchProfiles()

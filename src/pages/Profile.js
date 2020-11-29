@@ -3,6 +3,7 @@ import UserInfo from '../components/UserInfo';
 import AboutMe from '../components/AboutMe';
 import ProfileModel from '../models/profile';
 
+
 // next steps passing props into user info component
 // do a call to the user table within profile controller
 // do another const fetch user in addition to fetchProfile
@@ -52,10 +53,9 @@ const Profile = (props) => {
  
 
  
-
+console.log(displayName)
   return (
     <div className="profile-container">
-    
       <UserInfo displayName={displayName} age={age} city={city} state={state} />
       <AboutMe aboutMe={aboutMe} />
     </div>

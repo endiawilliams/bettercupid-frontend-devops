@@ -31,7 +31,7 @@ export default class ProfileModel {
   }
 
   static createProfile(data) {
-    return fetch(`${REACT_APP_API_URL}/profile/edit`, {
+    return fetch(`${REACT_APP_API_URL}/profile`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -41,8 +41,8 @@ export default class ProfileModel {
   }
 
   static editProfile(data) {
-    return fetch(`${REACT_APP_API_URL}/profile`, {
-      method: "POST",
+    return fetch(`${REACT_APP_API_URL}/profile/${data.id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json"
       },

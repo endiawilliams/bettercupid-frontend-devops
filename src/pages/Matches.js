@@ -20,6 +20,9 @@ const Matches = (props) => {
 
   return (
     <div className="profile-container">
+    {/* for (let i = 0; i < matches.length; i++) {
+      <Match match={ matches[i] } />
+    } */}
       <Match />
       <Match />
       <Match />

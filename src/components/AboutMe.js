@@ -1,10 +1,10 @@
 import React from 'react';
 
-const AboutMe = () => {
+const AboutMe = (props) => {
     return (
         <div className="card flex-wrap about-me">
             <h4 className="card-title">About Me</h4>
-            <p className="card-text">I like bananas.</p>
+            <p className="card-text">{props.aboutMe}</p>
         </div>
     )
 }

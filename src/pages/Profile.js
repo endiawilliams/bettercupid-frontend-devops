@@ -3,6 +3,7 @@ import UserInfo from '../components/UserInfo';
 import AboutMe from '../components/AboutMe';
 import ProfileModel from '../models/profile';
 
+
 // next steps passing props into user info component
 // do a call to the user table within profile controller
 // do another const fetch user in addition to fetchProfile
@@ -11,6 +12,9 @@ const Profile = (props) => {
   const [age, setAge] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
+  const [aboutMe, setAboutMe] = useState("")
+  
+  // const [state, setState] = useState("");
 
   const fetchProfile = () => {
     ProfileModel.getOwnProfile().then(data => {
@@ -21,6 +25,7 @@ const Profile = (props) => {
         setAge(data.age);
         setCity(data.city);
         setState(data.state);
+        setAboutMe(data.about_me)
       }
       // viewProfile()
     })
@@ -43,11 +48,16 @@ const Profile = (props) => {
   //   viewProfile()
   // }, []);
 
+ 
+
+ 
+
+ 
+console.log(displayName)
   return (
     <div className="profile-container">
-      <UserInfo displayName={ displayName } age={ age } city={ city } 
-      state={ state } currentUser={ props.currentUser } targetProfile={ props.match.params.id } />
-      <AboutMe />
+      <UserInfo displayName={displayName} age={age} city={city} state={state} />
+      <AboutMe aboutMe={aboutMe} />
     </div>
   )
 }

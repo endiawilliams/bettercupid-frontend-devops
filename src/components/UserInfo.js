@@ -2,7 +2,7 @@
 // if you import React in curly brackets it will return an error that says 
 // 'cannot read createElement of undefined'
 import React from 'react';
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import Profile from '../pages/Profile';
 import ViewProfile from '../pages/ViewProfile'
 import UserModel from '../models/user';
@@ -24,20 +24,9 @@ const UserInfo = (props) => {
       )
   }
 
-//   const toggleImage = useCallback(() => 
-//     setIsLiked(!isLiked),
-//     [isLiked, setIsLiked]
-//   )
-
-//   const updateRelationship = () => {
-//     toggleImage()
-
-//     if (isLiked === false) {
-//       RelationshipModel.unlikeUser()
-//     } else {
-//       RelationshipModel.likeUser()
-//     }
-//   }
+  const checkLikeStatus = () => {
+    RelationshipModel.findRelationship()
+  }
 
   const updateLikeStatus = (currentUser) => {
     if (isLiked) {
@@ -62,7 +51,7 @@ const UserInfo = (props) => {
   return (
     <div className="card flex-row flex-wrap user-info">
       <div className="card-header border-0">
-        <img src='https://www.flaticon.com/premium-icon/icons/svg/2102/2102633.svg' height='180px' width='180px' alt='user icon' />
+        <img src='https://i.imgur.com/4Zx85np.png' height='180px' width='180px' alt='user icon' />
       </div>
       <div className="card-block info-card-text">
         {/* THIS IS HOW WE PASS PROPS */}

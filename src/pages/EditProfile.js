@@ -33,7 +33,7 @@ const EditProfile = (props) => {
   const handleSubmit = (e) => {
       e.preventDefault()
       ProfileModel.editProfile({
-          currentUserId, displayName, gender, profilePic, city, geoState, aboutMe
+          displayName, gender, profilePic, city, geoState, aboutMe
       }).then(data => {
           console.log('Successfully updated profile', data)
           props.history.push('/profile')

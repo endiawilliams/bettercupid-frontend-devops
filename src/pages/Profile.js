@@ -22,26 +22,12 @@ const Profile = (props) => {
         setCity(data.city);
         setState(data.state);
       }
-      // viewProfile()
     })
   }
 
   useEffect(() => {
     fetchProfile()
   }, []);
- 
-  // console.log(props)
-
-  // const viewProfile = () => {
-  //   // extract the user id
-  //   ProfileModel.viewProfile(props.match.params.id).then({ 
-  //     // targetProfile
-  //   })
-  // }
-
-  // useEffect(() => {
-  //   viewProfile()
-  // }, []);
 
   return (
     <div className="profile-container">

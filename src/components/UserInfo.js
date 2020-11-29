@@ -60,15 +60,6 @@ const UserInfo = (props) => {
           <p>{props.age}</p>
           <p>{props.city}, {props.state}</p>
         </div>
-        <a href="#" className="info-card-button" onClick={() => updateLikeStatus(props.currentUser) }>
-          {isLiked
-            ? <img src='https://i.imgur.com/7LesXMV.png' height='20px' width='20px' alt='heart' />
-            : <img src='https://www.flaticon.com/svg/static/icons/svg/1077/1077035.svg' height='20px' width='20px' alt='heart' />
-          }
-        </a>
-        <a href="#" className="info-card-button">
-          <img src='https://www.flaticon.com/svg/static/icons/svg/1077/1077071.svg' height='20px' width='20px' alt='message' />
-        </a>
         <a href="/profile/edit" className="btn pink-button info-card-button">Edit</a>
         <a href="/" className="btn pink-button info-card-button" onClick={deleteUser}>Delete</a>
       </div>

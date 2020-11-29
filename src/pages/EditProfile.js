@@ -2,45 +2,43 @@ import React, { useState, useEffect } from 'react';
 import ProfileModel from '../models/profile';
 // check to make sure that on submit an empty field does not erase previous contents
 // remove /editprofile/:id route so users can't edit another user's profile?
-
 const EditProfile = (props) => {
-  const [displayName, setDisplayName] = useState('');
-  const [gender, setGender] = useState('');
-  const [profilePic, setProfilePic] = useState('');
-  const [city, setCity] = useState('');
-  const [geoState, setGeoState] = useState('');
-  const [aboutMe, setAboutMe] = useState('');
-  const currentUserId = props.currentUser
+  const [profile, setProfile] = useState({})
   
-  const handleDisplayName = e => {
-      setDisplayName(e.target.value)
+  const fetchProfile = () => {
+    ProfileModel.getOwnProfile().then(data => {
+      if (data) {
+        setProfile(data)
+      } 
+      // viewProfile()
+    })
   }
-  const handleGender = e => {
-      setGender(e.target.value)
+
+  useEffect(() => {
+    fetchProfile()
+  }, [])
+
+  //creates a new object w all KV pairs in profile
+  const handleUpdate = e => {
+    setProfile({
+      ...profile,
+      [e.target.name]: e.target.value
+    })
   }
-  const handleProfilePic = e => {
-      setProfilePic(e.target.value)
-  }
-  const handleCity = e => {
-      setCity(e.target.value)
-  }
-  const handleGeoState = e => {
-      setGeoState(e.target.value)
-  }
-  const handleAboutMe = e => {
-      setAboutMe(e.target.value)
-  }
+
   const handleSubmit = (e) => {
       e.preventDefault()
-      ProfileModel.editProfile({
-          displayName, gender, profilePic, city, geoState, aboutMe
-      }).then(data => {
+      ProfileModel.editProfile(profile)
+      .then(data => {
           console.log('Successfully updated profile', data)
           props.history.push('/profile')
       })
   }
-  
 
+  if (!profile.display_name) {
+    return null
+  }
+  
   return (
     <div className="edit-profile-form card">
       <h4 className="edit-profile-header">Edit Profile</h4>
@@ -49,8 +47,8 @@ const EditProfile = (props) => {
           <label htmlFor="display_name" className="col-form-label">Display Name</label>
           <div className="col-sm-10">
             <input
-              onChange={handleDisplayName}
-              value={displayName}
+              onChange={handleUpdate}
+              value={profile.display_name}
               type="text"
               id="display_name"
               name="display_name"
@@ -61,8 +59,8 @@ const EditProfile = (props) => {
           <label htmlFor="gender" className="col-form-label">Gender</label>
           <div className="col-sm-10">
             <input
-              onChange={handleGender}
-              value={gender}
+              onChange={handleUpdate}
+              value={profile.gender}
               type="text"
               id="gender"
               name="gender"
@@ -73,8 +71,8 @@ const EditProfile = (props) => {
           <label htmlFor="image" className="col-form-label">Profile Picture (URL)</label>
           <div className="col-sm-10">
             <input
-              onChange={handleProfilePic}
-              value={profilePic}
+              onChange={handleUpdate}
+              value={profile.image}
               type="text"
               id="image"
               name="image"
@@ -85,8 +83,8 @@ const EditProfile = (props) => {
           <label htmlFor="city" className="col-form-label">City</label>
           <div className="col-sm-10">
             <input
-              onChange={handleCity}
-              value={city}
+              onChange={handleUpdate}
+              value={profile.city}
               type="text"
               id="city"
               name="city"
@@ -97,8 +95,8 @@ const EditProfile = (props) => {
           <label htmlFor="state" className="col-form-label">State</label>
           <div className="col-sm-10">
             <input
-              onChange={handleGeoState}
-              value={geoState}
+              onChange={handleUpdate}
+              value={profile.state}
               type="text"
               id="state"
               name="state"
@@ -109,8 +107,8 @@ const EditProfile = (props) => {
           <label htmlFor="about_me" className="col-form-label">About Me</label>
           <div className="col-sm-10">
             <input
-              onChange={handleAboutMe}
-              value={aboutMe}
+              onChange={handleUpdate}
+              value={profile.about_me}
               type="text"
               id="about_me"
               name="about_me"

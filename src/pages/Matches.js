@@ -9,8 +9,8 @@ const Matches = (props) => {
   const findMatches = () => {
     RelationshipModel.findMatches()
     .then((allMatches) => {
-      console.log(allMatches)
       setMatches(allMatches)
+      console.log(JSON.stringify(allMatches))
     })
   }
 
@@ -18,16 +18,37 @@ const Matches = (props) => {
     findMatches()
   }, []);
 
+  console.log(matches)
+
   return (
     <div className="profile-container">
-    {/* for (let i = 0; i < matches.length; i++) {
-      <Match match={ matches[i] } />
-    } */}
-      <Match />
-      <Match />
-      <Match />
+      {matches.map((match, key) => { return <Match match={ match } key={ key } /> })}
     </div>
-  ) 
+  )
+
+  // return (
+  //   <div className="profile-container">
+  //     <Match match={ matches } />
+  //   </div>
+  // )
+
+  //console.log(matches)
+
+  // return (
+  //   if (matches.length > 0) {
+  //     for (let i = 0; i < matches.length; i++) {
+  //       <div className="profile-container">
+  //         <Match match={ matches[i] } />
+  //       </div>
+  //     }
+  //   }
+
+    // <div className="profile-container">
+    //   <Match />
+    //   <Match />
+    //   <Match />
+    // </div>
+  // ) 
 }
 
 export default Matches;

@@ -1,8 +1,4 @@
-// NOTE: the next 2 lines MUST be kept separate to prevent a compiling error, because
-// if you import React in curly brackets it will return an error that says 
-// 'cannot read createElement of undefined'
-import React from 'react';
-import { useState, useCallback, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Profile from '../pages/Profile';
 import ViewProfile from '../pages/ViewProfile'
 import UserModel from '../models/user';
@@ -44,12 +40,23 @@ const ViewProfileInfo = (props) => {
     }
   }
 
-  // console.log(props.targetProfile)
+  console.log(props.image)
+
+  const useImage = () => {
+    if (props.image === null || props.image === undefined || props.image === "") {
+      return false
+    } else {
+      return true
+    }
+  }
 
   return (
     <div className="card flex-row flex-wrap user-info">
       <div className="card-header border-0">
-        <img src='https://i.imgur.com/4Zx85np.png' height='180px' width='180px' alt='user icon' />
+        {useImage()
+          ? <img src={props.image} height='180px' width='180px' alt='image' />
+          : <img src='https://i.imgur.com/4Zx85np.png' height='180px' width='180px' alt='user icon' />
+        }
       </div>
       <div className="card-block info-card-text">
         {/* THIS IS HOW WE PASS PROPS */}

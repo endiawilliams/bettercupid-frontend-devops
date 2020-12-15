@@ -28,7 +28,8 @@ const BrowseResults = (props) => {
           <p>{props.city}, {props.state}</p>
         </div>
         <Link to={'/profile/' + props.userId} className="btn pink-button info-card-button">
-          View Profile</Link>
+          View Profile
+        </Link>
       </div>
     </div>
   )

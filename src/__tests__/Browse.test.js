@@ -9,6 +9,6 @@ describe('tests that the browse page is working', () => {
     })
     it('renders three <BrowseResults /> components', () => {
         const wrapper = shallow(<Browse />)
-        expect(wrapper.find(BrowseResults)).to.have.lengthOf(3)
+        expect(wrapper.find(BrowseResults)).toHaveLength(3)
     })
 })

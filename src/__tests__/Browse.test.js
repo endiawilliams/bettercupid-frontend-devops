@@ -1,9 +1,10 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Browse from '../pages/Browse';
 import BrowseResults from '../components/BrowseResults';
 
 describe('tests that the browse page is working', () => {
+    // unit tests
     it('renders without crashing', () => {
         shallow(<Browse />)
     })

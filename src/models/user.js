@@ -1,4 +1,4 @@
-const REACT_APP_API_URL = "http://localhost:4000/api/v1"
+const REACT_APP_API_URL = "http://34.122.25.56:4000/api/v1"
 
 export default class UserModel {
   static create(data) {
@@ -6,7 +6,7 @@ export default class UserModel {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:4000/"
+        "Access-Control-Allow-Origin": "http://34.122.25.56:4000/"
       },
       body: JSON.stringify(data)
     }).then(res => res.json())
@@ -18,7 +18,7 @@ export default class UserModel {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:4000/"
+        "Access-Control-Allow-Origin": "http://34.122.25.56:4000/"
       },
       body: JSON.stringify(credentials),
       // auth headers - included with any request requiring authentication

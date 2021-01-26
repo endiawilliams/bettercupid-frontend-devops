@@ -1,4 +1,4 @@
-const REACT_APP_API_URL = "http://34.122.25.56:4000/api/v1"
+const REACT_APP_API_URL = process.env.REACT_APP_API_URL
 
 export default class ProfileModel {
   static getAllProfiles(data) {
@@ -6,7 +6,6 @@ export default class ProfileModel {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://34.122.25.56:4000/"
       },
       credentials: "include",
       body: JSON.stringify(data)
@@ -17,7 +16,6 @@ export default class ProfileModel {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://34.122.25.56:4000/"
       },
       credentials: "include"
     }).then(res => res.json())
@@ -28,7 +26,6 @@ export default class ProfileModel {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://34.122.25.56:4000/"
       },
       credentials: "include"
     }).then(res => res.json())
@@ -39,7 +36,6 @@ export default class ProfileModel {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://34.122.25.56:4000/"
       },
       credentials: "include",
       body: JSON.stringify(data)
@@ -51,7 +47,6 @@ export default class ProfileModel {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://34.122.25.56:4000/"
       },
       credentials: "include",
       body: JSON.stringify(data)
@@ -62,7 +57,6 @@ export default class ProfileModel {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://34.122.25.56:4000/"
       },
       credentials: "include",
       body: JSON.stringify(data)

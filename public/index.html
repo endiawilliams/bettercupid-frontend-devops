@@ -25,6 +25,13 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+
+    <script>
+      //dirty hack to make cookies work in dev because host names apparently need a '.' to be valid
+      if (window.location.hostname == "localhost") {
+          window.location.hostname = "localhost.localdomain";
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

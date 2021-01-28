@@ -17,6 +17,7 @@ jobs:
           node-version: '14'
 
       - run: echo "127.0.0.1  bettercupid.endia.dev" | sudo tee -a /etc/hosts
+      - run: echo "REACT_APP_API_URL=https://bettercupidapi.endia.dev/api/v1" | sudo tee -a .env.development.local
       - run: npm ci
       - run: npm test
       - run: CI="" npm run build

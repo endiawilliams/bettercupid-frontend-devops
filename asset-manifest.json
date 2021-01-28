@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "https://bettercupid.endia.dev/static/css/main.d3a2b168.chunk.css",
-    "main.js": "https://bettercupid.endia.dev/static/js/main.42a20770.chunk.js",
-    "main.js.map": "https://bettercupid.endia.dev/static/js/main.42a20770.chunk.js.map",
+    "main.js": "https://bettercupid.endia.dev/static/js/main.39b8f56b.chunk.js",
+    "main.js.map": "https://bettercupid.endia.dev/static/js/main.39b8f56b.chunk.js.map",
     "runtime-main.js": "https://bettercupid.endia.dev/static/js/runtime-main.036b384d.js",
     "runtime-main.js.map": "https://bettercupid.endia.dev/static/js/runtime-main.036b384d.js.map",
     "static/js/2.8417425f.chunk.js": "https://bettercupid.endia.dev/static/js/2.8417425f.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.036b384d.js",
     "static/js/2.8417425f.chunk.js",
     "static/css/main.d3a2b168.chunk.css",
-    "static/js/main.42a20770.chunk.js"
+    "static/js/main.39b8f56b.chunk.js"
   ]
 }

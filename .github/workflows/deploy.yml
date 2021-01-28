@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: '14'
 
+      - run: echo "127.0.0.1  bettercupid.endia.dev" | sudo tee -a /etc/hosts
       - run: npm ci
       - run: npm test
       - run: CI="" npm run build

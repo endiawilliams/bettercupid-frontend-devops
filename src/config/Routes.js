@@ -37,7 +37,6 @@ const Routes = (props) => (
       />
     }} />
 
-
     <PrivateRoute path='/profile/:id' component={ViewProfile} currentUser={props.currentUser}  
     />
     

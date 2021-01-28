@@ -11,7 +11,7 @@ ReactDOM.render(
   // It activates additional checks and warnings for 
   // its descendants.
   <React.StrictMode>
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <App />
     </Router>
   </React.StrictMode>,
